@@ -1,29 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Random Fun Facts</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#6a11cb,#2575fc);
+transition:0.5s;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+width:90%;
+max-width:400px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+h1{
+color:#2575fc;
+}
+
+#fact{
+font-size:20px;
+margin:20px 0;
+font-weight:bold;
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:#2575fc;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+</style>
 </head>
+
 <body>
 
-<h1>Random Fun Facts</h1>
+<div class="card">
+<h1>🌍 Random Fun Facts</h1>
 
-<p id="fact">Click the button to see a fun fact!</p>
+<p id="fact">
+Click below to discover an amazing fact!
+</p>
 
-<button onclick="showFact()">New Fact</button>
+<button onclick="showFact()">
+✨ New Fact
+</button>
+</div>
 
 <script>
-const facts = [
-"Bananas are berries but strawberries are not.",
-"Honey never spoils.",
-"Octopuses have three hearts.",
-"Sharks existed before trees.",
-"A day on Venus is longer than a year on Venus."
+
+const facts=[
+"🍌 Bananas are berries, but strawberries aren't.",
+"🐙 Octopuses have three hearts.",
+"🍯 Honey never spoils.",
+"🦈 Sharks existed before trees.",
+"🌎 Antarctica is the world's largest desert.",
+"🦒 A giraffe's tongue is about 20 inches long.",
+"🐧 Penguins propose with pebbles.",
+"🚀 Space is completely silent.",
+"🐝 Bees can recognize human faces.",
+"🌙 Footprints on the moon can last millions of years."
 ];
 
-function showFact() {
-document.getElementById("fact").innerHTML =
-facts[Math.floor(Math.random() * facts.length)];
+const colors=[
+"linear-gradient(135deg,#6a11cb,#2575fc)",
+"linear-gradient(135deg,#ff512f,#dd2476)",
+"linear-gradient(135deg,#11998e,#38ef7d)",
+"linear-gradient(135deg,#fc4a1a,#f7b733)",
+"linear-gradient(135deg,#8E2DE2,#4A00E0)"
+];
+
+function showFact(){
+document.getElementById("fact").innerHTML=
+facts[Math.floor(Math.random()*facts.length)];
+
+document.body.style.background=
+colors[Math.floor(Math.random()*colors.length)];
 }
+
 </script>
 
 </body>
