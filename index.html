@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My First Website</title>
+<title>Random Fun Facts</title>
 </head>
 <body>
-<h1>Hello, I'm Joy Aguah!</h1>
-<p>Welcome to my first website on GitHub!</p>
+
+<h1>Random Fun Facts</h1>
+
+<p id="fact">Click the button to see a fun fact!</p>
+
+<button onclick="showFact()">New Fact</button>
+
+<script>
+const facts = [
+"Bananas are berries but strawberries are not.",
+"Honey never spoils.",
+"Octopuses have three hearts.",
+"Sharks existed before trees.",
+"A day on Venus is longer than a year on Venus."
+];
+
+function showFact() {
+document.getElementById("fact").innerHTML =
+facts[Math.floor(Math.random() * facts.length)];
+}
+</script>
+
 </body>
 </html>
